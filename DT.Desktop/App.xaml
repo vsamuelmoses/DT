@@ -1,0 +1,17 @@
+﻿<Application x:Class="DT.Desktop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:model="clr-namespace:DT.Model;assembly=DT.Model"
+             xmlns:views="clr-namespace:DT.Desktop.Views"
+             StartupUri="Views\DTView.xaml">
+    <Application.Resources>
+        <!--Converters-->
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        <!--DataTemplates-->
+        <DataTemplate DataType="{x:Type model:Question}">
+            <views:QuestionAndAnswerView/>
+        </DataTemplate>
+        
+    </Application.Resources>
+</Application>

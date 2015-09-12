@@ -1,0 +1,24 @@
+﻿<Window x:Class="DT.Desktop.Views.DTView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DTView" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="TopicsListView"
+            ItemsSource="{Binding Topics}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Questions.Count}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView Grid.Column="1"
+            ItemsSource="{Binding ElementName=TopicsListView, Path=SelectedItem.Questions}"/>
+    </Grid>
+</Window>
