@@ -1,14 +1,35 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
 </head>
-<body>
-    <div>
-        This is index
-        @RenderPage("Views/topics.cshtml")
-    </div>
-</body>
+    <body>
+        <div>
+            This is index
+            @RenderPage("Views/topics.cshtml")
+        </div>
+        
+        @Scripts.Render(
+        "~/bundles/jquery",
+        "~/bundles/jsextlibs",
+        "~/Scripts/libs/require.js",
+        "~/bundles/app",
+        "~/Scripts/main.js")
+
+        @*<script src="Scripts/libs/jquery-1.8.2.js" language="javascript"></script>
+        <script src="Scripts/libs/amplify/amplify.core.js" language="javascript"></script>
+        <script src="Scripts/libs/amplify/amplify.request.js" language="javascript"></script>
+        <script src="Scripts/libs/amplify/amplify.store.js" language="javascript"></script>
+        <script src="Scripts/libs/require.js" language="javascript"></script>
+        <script src="Scripts/libs/knockout-2.2.0.js" language="javascript"></script>
+        <script src="Scripts/apps/dataservice.topics.js" language="javascript"></script>
+        <script src="Scripts/apps/datacontext.js" language="javascript"></script>
+        <script src="Scripts/apps/main.js" language="javascript"></script>
+        <script src="Scripts/apps/model.js" language="javascript"></script>
+        <script src="Scripts/apps/model.mapper.js" language="javascript"></script>
+        <script src="Scripts/apps/model.topic.js" language="javascript"></script>*@
+    </body>
 </html>
