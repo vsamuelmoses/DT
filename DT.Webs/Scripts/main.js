@@ -6,7 +6,11 @@
     loadPluginsAndBoot();
 
     function define3rdPartyLibs() {
+        define('jquery', [], function() { return root.jquery; });
         define('ko', [], function () { return root.ko; });
+        define('moment', [], function () { return root.moment; });
+        define('toastr', [], function () { return root.toastr; });
+        define('underscore', [], function () { return root._; });
     }
 
     function loadPluginsAndBoot() {
@@ -16,7 +20,12 @@
     }
 
     function boot() {
-        require(['datacontext'], function(dc) { dc.run(); });
+
+        require(['dataprimer', 'binder'], function(dp, binder) {
+            dp.fetch()
+                .done(function() { binder.bind(); })
+                .always(function () { alert('dataprimer fetch finished'); });
+        });
     }
 
 })();

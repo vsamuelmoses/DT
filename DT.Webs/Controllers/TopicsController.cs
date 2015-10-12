@@ -1,26 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using DT.Data;
-using DT.Data.Repositories;
 using DT.Model;
 
 namespace DT.Webs.Controllers
 {
-    public class TopicsController : ApiController
+    public class TopicsController : ApiControllerBase
     {
-        public IDTUoW uow;
-        public TopicsController()
-        {
-            var rf = new RepositoryFactories();
-            var rp = new RepositoryProvider(rf);
-            uow = new DTUoW(rp);
-        }
-
         // GET: api/Topics
         public IEnumerable<Topic> Get()
         {
             //return new string[] { "value1", "value2" };
-            return uow.TopicRepository.GetAll();
+            return Uow.TopicRepository.GetAll();
         }
 
         // GET: api/Topics/5

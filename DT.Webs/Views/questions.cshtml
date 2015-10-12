@@ -1,10 +1,11 @@
-﻿<section id="topics-view" >
+﻿<section id="questions-view">
 
     <nav>
-        <ul data-bind="foreach: topics">
+        <ul data-bind="foreach: questions">
             <li>
                 <a>
-                    <span data-bind="text: title"></span>
+                    <span data-bind="text: text"></span>
+                    <span data-bind="text: topicId"></span>
                 </a>
             </li>
         </ul>
@@ -12,7 +13,7 @@
 
     @*<div data-bind="template: {name: filterTemplate}"></div>
 
-    <section class="view-list" data-bind="template: {name: sessionTemplate, foreach: sessions}"></section>*@
+        <section class="view-list" data-bind="template: {name: sessionTemplate, foreach: sessions}"></section>*@
 
     <!-- Knockout Debugging -->
     <!--

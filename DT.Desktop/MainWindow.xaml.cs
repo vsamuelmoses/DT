@@ -16,7 +16,7 @@ namespace DT.Desktop
 
         private void OnReadButtonClicked(object sender, RoutedEventArgs e)
         {
-            using (var dbContext = DTDbContext.Create())
+            using (var dbContext = new DTDbContext())
             {
                 foreach (var topic in dbContext.Topics)
                 {

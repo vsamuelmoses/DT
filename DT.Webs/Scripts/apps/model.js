@@ -1,9 +1,10 @@
 ﻿define('model',
-    ['model.topic'],
-    function (topic) {
+    ['model.topic', 'model.question'],
+    function (topic, question) {
 
         return {
-            topic: topic
+            topic: topic,
+            question: question
         }
 
     });
